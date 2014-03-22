@@ -1,8 +1,8 @@
 //
 //  main.m
-//  PropertyProject
+//  DelegatesProgect
 //
-//  Created by Alexa on 14.03.14.
+//  Created by Alexa on 21.03.14.
 //  Copyright (c) 2014 Alexa. All rights reserved.
 //
 

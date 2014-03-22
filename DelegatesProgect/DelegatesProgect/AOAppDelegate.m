@@ -1,12 +1,14 @@
 //
 //  AOAppDelegate.m
-//  PropertyProject
+//  DelegatesProgect
 //
-//  Created by Alexa on 14.03.14.
+//  Created by Alexa on 21.03.14.
 //  Copyright (c) 2014 Alexa. All rights reserved.
 //
 
 #import "AOAppDelegate.h"
+#import "AOPatient.h"
+#import "AODoctor.h"
 
 @implementation AOAppDelegate
 
@@ -16,6 +18,24 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    AOPatient* patient1 = [[AOPatient alloc] init];
+    patient1.name = @"Patrik";
+    patient1.temperature = 38.5f;
+    
+    AOPatient* patient2 = [[AOPatient alloc] init];
+    patient2.name = @"Seva";
+    patient2.temperature = 40.5f;
+    
+    AODoctor* doctor = [[AODoctor alloc] init];
+    patient1.delegateDoctor = doctor;
+    patient2.delegateDoctor = doctor;
+    
+    BOOL isPatientGood = patient1.howAreYou;
+    NSLog(@"Patient %@ feels %@ now!", patient1.name, isPatientGood?@"good":@"bed");
+
+    isPatientGood = patient2.howAreYou;
+    NSLog(@"Patient %@ feels %@ now!", patient2.name, isPatientGood?@"good":@"bed");
     return YES;
 }
 
